@@ -43,7 +43,7 @@
 
 #pragma once
 
-#include "simd_common.hpp"
+#include "simd/simd_common.hpp"
 
 #ifdef __AVX512F__
 

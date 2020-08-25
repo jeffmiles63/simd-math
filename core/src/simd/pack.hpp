@@ -43,7 +43,7 @@
 
 #pragma once
 
-#include "simd_common.hpp"
+#include "simd/simd_common.hpp"
 
 namespace SIMD_NAMESPACE {
 

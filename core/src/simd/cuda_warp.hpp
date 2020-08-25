@@ -43,7 +43,7 @@
 
 #pragma once
 
-#include "simd_common.hpp"
+#include "simd/simd_common.hpp"
 
 #ifdef __CUDACC__
 #define SIMD_CUDA_ALWAYS_INLINE __forceinline__

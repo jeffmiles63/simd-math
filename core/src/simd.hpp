@@ -41,44 +41,44 @@
 //@HEADER
 */
 
-#pragma once
+#ifndef __SIMD_MATH_HPP__
+#define __SIMD_MATH_HPP__
 
-#include "simd_common.hpp"
-
-#include "scalar.hpp"
-
-#include "pack.hpp"
+#include "simd/simd_common.hpp"
+#include "simd/scalar.hpp"
+#include "simd/pack.hpp"
 
 #if defined(__clang_major__) && (__clang_major__ >= 11)
-#include "vector_size.hpp"
+#include "simd/vector_size.hpp"
 #endif
 
+// Devices
 #if defined( __CUDACC__ )
-#include "cuda_warp.hpp"
-
+#include "simd/cuda_warp.hpp"
 #elif defined( __HIPCC__ )
-#include "hip_wavefront.hpp"
+#include "simd/hip_wavefront.hpp"
 
+// Host
 #else
 
 #ifdef __SSE__
-#include "sse.hpp"
+#include "simd/sse.hpp"
 #endif
 
 #ifdef __AVX__
-#include "avx.hpp"
+#include "simd/avx.hpp"
 #endif
 
 #ifdef __AVX512F__
-#include "avx512.hpp"
+#include "simd/avx512.hpp"
 #endif
 
 #ifdef __ARM_NEON
-#include "neon.hpp"
+#include "simd/neon.hpp"
 #endif
 
 #ifdef __VSX__
-#include "vsx.hpp"
+#include "simd/vsx.hpp"
 #endif
 
 #endif
